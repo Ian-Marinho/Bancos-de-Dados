@@ -4,6 +4,7 @@ Trabalho do segundo semestre, banco de dados
 # Perguntas de entrevista
 
 Qual o problema?
+
 Gerenciar os clientes e seus pagamentos.
 
 Quais dados voces coletam do cliente
@@ -29,6 +30,7 @@ Quais sao os procedimentos possiveis?
 - Na primeira sessao, é um valor diferente (registro diferente pra adicionar)
 
 Tem plano de saude?
+
 Não é particular apenas.
 
 Quais as formas de pagamento possiveis?
@@ -39,6 +41,7 @@ Quais as formas de pagamento possiveis?
 - PIX
 
 Se tem avaliaçao fisica da pessoa?
+
 Sim
 
 OBS: As pessoas podem pagar mais de uma sessão ao mesmo tmepo por meio de pacotes, que da um desconto.
