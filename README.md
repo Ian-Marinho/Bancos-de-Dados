@@ -5,7 +5,7 @@ Trabalho do segundo semestre, banco de dados
 
 Qual o problema?
 
-Gerenciar os clientes e seus pagamentos.
+Gerenciar os clientes e seus pagamentos. Alem da gerenciação da montante do mês.
 
 Quais dados voces coletam do cliente
 - Nome
@@ -50,3 +50,8 @@ Na primeira é antecipado. depois pode pagar no dia que ela for.
 
 Tem controle se a pessoa ja pagou?
 Sim, tem um controle se ja pagou ou nao.
+
+As sessoes tem tempo de duração medio?
+1hora mais ou menos
+
+OBS: fazer o calculo da montante do mês baseado nas formas de pagamento a vista + o dinheiro que sera recebido pela parcela do credito parcelado.
