@@ -5,7 +5,7 @@ Trabalho do segundo semestre, banco de dados
 
 Qual o problema?
 
-Gerenciar os clientes e seus pagamentos. Alem da gerenciação da montante do mês.
+Gerenciar os clientes e seus pagamentos. Alem da gestão da montante do mês.
 
 Quais dados voces coletam do cliente
 - Nome
