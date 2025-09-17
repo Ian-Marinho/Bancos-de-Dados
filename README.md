@@ -2,6 +2,8 @@
 Trabalho do segundo semestre, banco de dados
 
 # Perguntas de entrevista
+Qual o nome da clinica?
+Clínica Fábio Pense
 
 Qual o problema?
 
