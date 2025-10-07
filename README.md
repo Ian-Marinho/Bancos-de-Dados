@@ -1,6 +1,9 @@
 # Bancos-de-Dados
 Trabalho do segundo semestre, banco de dados
 
+# Link modelo entidade relacionamento 
+https://miro.com/app/board/uXjVJ9j9ggI=/
+
 # Perguntas de entrevista
 Qual o nome da clinica?
 Clínica Fábio Pense
