@@ -4,6 +4,9 @@ Trabalho do segundo semestre, banco de dados
 # Link modelo entidade relacionamento 
 https://miro.com/app/board/uXjVJ9j9ggI=/
 
+# MLR
+https://docs.google.com/document/d/1PHoAAaW0M_But66VKlJjiixTkXLSOoPdXbNoLWCAjtI/edit?usp=sharing
+
 # Perguntas de entrevista
 Qual o nome da clinica?
 Clínica Fábio Pense
