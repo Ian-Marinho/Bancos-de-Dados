@@ -1,54 +1,45 @@
-**Modelo 1:**
+# BD MLR
 
-Clientes(Cliente CPF(nn),Nome, Dt. Nasc, Sexo, Profissão, Email, telefone, endereço, CEP)
+## Modelo 3
 
-Pacote(Id. pacote, nome, valor total, quantidade de sessões, comprador, tipos de procedimentos)
-Pacote[Comprador]->Clientes[CPF]
-Pacote[tipos de procedimento] -> Procedimento[id. Procedimento]
+**Clientes**(<u>ClienteCPF</u>(nn), Nome, Dt.Nasc, Sexo, Profissão, Email, telefone, endereço, CEP)
 
-Procedimento(Id. Procedimento(nn), valor padrão, valor primeira sessão, nome, feito por)
-Procedimento[Feito por] -> Profissional[Id. profissional]
+---
 
-Profissional(Id. profissional(nn), Prof. CPF(nn), nome, percentual de comissão)
+**Serviço**(Data_aquisição, valor, forma_pagamento, data_pagamento, status_pagamento, <u>cod_pacote</u>, <u>cod_Procedimento</u>, <u>C.CPF</u>)
 
-Pagamento(Valor, data pagamento, forma pagamento, status pagamento, pago por)
-Pagamento[pago por] -> Clientes[CPF]
+Serviço.Pacote[<u>cod_pacote</u>] → Pacote[id_pacote]  
+Serviço[<u>cod_procedimento</u>] → Procedimento[Id_Procedimento]  
+Serviço[<u>C.CPF</u>] → Clientes[CPF]
 
-Agendamento(Id. agendamento, data_hora,CPF_cliente)
-Agendamento[CPF_cliente] -> Clientes[CPF]
+---
 
-Adquire Pacote( Data aquisição, status do pacote, cod. pacote)
-Adquire Pacote[cod. pacote] -> Pacote[id. pacote]
+**Pacote**(<u>Id_pacote</u>(nn), nome, valor_total, quantidade_de_sessões, status_pct, comprador, tipos_procedimentos)
 
+Pacote[<u>Comprador</u>] → Serviço[C.CPF]  
+Pacote[<u>tipos_procedimento</u>] → Procedimento[id_Procedimento]
 
+---
 
-**Modelo 2:**
+**Procedimento**(<u>Id_Procedimento</u>(nn), valor_padrão, valor_primeira_sessão, nome, paciente)
 
-Clientes(Cliente CPF(nn),Nome, Dt. Nasc, Sexo, Profissão, Email, telefone, endereço, CEP)
+Procedimento[<u>paciente</u>] → Serviço[C.CPF]
 
-Pacote(Id. pacote, nome, valor total, quantidade de sessões, comprador, tipos de procedimentos)
-Pacote[Comprador]->Clientes[CPF]
-Pacote[tipos de procedimento] -> Procedimento[id. Procedimento]
+---
 
-Procedimento(Id. Procedimento(nn), valor padrão, valor primeira sessão, nome, paciente)
-Procedimento[paciente] -> Clientes[CPF]
+**Profissional**(<u>Id_profissional</u>(nn), <u>Prof_CPF</u>(nn), nome, percentual_de_comissão)
 
-Profissional(Id. profissional(nn), Prof. CPF(nn), nome, percentual de comissão)
+---
 
-Pagamento(Valor, data pagamento, forma pagamento, status pagamento, pago por)
-Pagamento[pago por] -> Clientes[CPF]
+**Atendimento**(<u>Id_agendamento</u>(nn), data_hora, CPF_cliente, feito_por)
 
-Atendimento(Id. agendamento, data_hora,CPF_cliente, feito por)
-Atendimento[CPF_cliente] -> Clientes[CPF]
-Atendimento[Feito por] -> Profissional[Id. profissional]
+Atendimento[<u>CPF_cliente</u>] → Procedimento[paciente]  
+Atendimento[<u>Feito_por</u>] → Profissional[Id_profissional]
 
-Adquire( Data aquisição, status do pacote, cod. pacote, cod. Procedimento)
-Adquire Pacote[cod. pacote] -> Pacote[id. pacote]
-Adquire[cod. procedimento] -> Procedimento[Id. Procedimento]
+---
 
-
-
-
-
-
-
+📘 **Legenda:**  
+- `(nn)` = Not Null  
+- **negrito** = Chave primária  
+- <u>sublinhado</u> = Chave estrangeira  
+- Setas (→) = Relacionamentos
