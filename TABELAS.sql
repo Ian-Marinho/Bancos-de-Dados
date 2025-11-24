@@ -163,21 +163,21 @@ INSERT INTO Atendimento (id_agendamento, data_hora, CPF_cliente, feito_por_id_pr
 (14, '2024-11-09 10:00:00', '99900011122', 1), 
 (15, '2024-11-09 15:30:00', '00011122233', 2); 
 
---quanto foi ganho no dia?
+--Qual foi o faturamento diario nos dias que a clinica atendeu?
 SELECT data_aquisicao AS dia,
 SUM(valor) AS total_recebido FROM Aquisicao
 WHERE status_pagamento = 'Pago'
 GROUP BY data_aquisicao
 ORDER BY data_aquisicao;
 
---quanto foi ganho na semana?
+--Qual foi o faturamento semanal semana?
 SELECT date_trunc('week', data_aquisicao)::date AS semana_inicio,
 SUM(valor) AS total_recebido FROM Aquisicao
 WHERE status_pagamento = 'Pago'
 GROUP BY date_trunc('week', data_aquisicao)
 ORDER BY semana_inicio;
 
---quanto foi ganho no mes?
+--Qual foi o faturamento mensal?
 SET lc_time = 'pt_BR';
 SELECT INITCAP(TO_CHAR(data_aquisicao, 'TMMonth')) AS mes,
 SUM(valor) AS total_recebido
@@ -186,7 +186,7 @@ WHERE status_pagamento = 'Pago'
 GROUP BY TO_CHAR(data_aquisicao, 'TMMonth')
 ORDER BY MIN(data_aquisicao);
 
---qual o Procedimento Mais Vendido (em termos de número de pacotes adquiridos)?
+--Qual o Procedimento mais Vendido (em termos de número de pacotes adquiridos)?
 SELECT S.nome AS nome_do_servico,
 COUNT(Pc.id_pacote) AS total_pacotes_vendidos
 FROM Servico S
@@ -196,7 +196,7 @@ GROUP BY S.nome
 ORDER BY total_pacotes_vendidos DESC
 LIMIT 1;
 
---qual o Valor Total de Comissões a Ser Pago para Cada Profissional?
+--Qual o Valor Total de Comissões a Ser Pago para Cada Profissional?
 SELECT P.nome AS nome_profissional, P.percentual_de_comissao,
 SUM(Aq.valor * (P.percentual_de_comissao / 100)) AS valor_total_comissao
 FROM Profissional P
